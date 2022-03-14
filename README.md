@@ -1,6 +1,7 @@
 # react-redux-test
 
-![image](https://user-images.githubusercontent.com/20415880/158131703-0c5292a5-7c5c-4ddb-bfdd-232d7dd96119.png)
+![image](https://user-images.githubusercontent.com/12518219/158185864-36f538d7-917e-4ceb-a8db-943d0a72c03f.png)
+
 
 Use the seed provided to you to build the following React.js app.
 Notice the seed has some mistakes you need to fix.
