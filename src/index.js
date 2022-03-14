@@ -4,6 +4,6 @@ import "./index.css";
 import SortableComponent from "./components/App";
 
 ReactDOM.render(
-    <SortableComponent />
+  <SortableComponent />,
   document.getElementById("root")
 );
