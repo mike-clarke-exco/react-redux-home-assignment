@@ -9,4 +9,6 @@ The app should have a responsive table which looks like the design above.
 Columns and rows should be draggable.
 Manage your app state using Redux.
 
+Do not modify the data given in `data.js` file.
+
 External packages: https://github.com/clauderic/react-sortable-hoc
