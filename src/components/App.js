@@ -17,8 +17,6 @@ const SortableItem = SortableElement(({ value }) => (
     <td className="td-worker-name">{value.workerName}</td>
     <td className="td-id">{value.id}</td>
   </tr>
-
-  // <li tabIndex={0}>{value}</li>
 ));
 
 const SortableList = SortableContainer(({ items }) => {
