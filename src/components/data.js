@@ -6,6 +6,7 @@ export const ITEMS = [
     manualHours: "fast",
     hours: "155:00",
     totalHours: "200:000",
+    status: 'green',
   },
   {
     id: "208635872",
@@ -14,6 +15,7 @@ export const ITEMS = [
     manualHours: "fast",
     hours: "155:00",
     totalHours: "200:000",
+    status: null,
   },
   {
     id: "208635872",
@@ -22,6 +24,7 @@ export const ITEMS = [
     manualHours: "fast",
     hours: "155:00",
     totalHours: "200:000",
+    status: 'green',
   },
   {
     id: "208635872",
@@ -30,6 +33,7 @@ export const ITEMS = [
     manualHours: "fast",
     hours: "155:00",
     totalHours: "200:000",
+    status: 'green',
   },
   {
     id: "208635872",
@@ -38,6 +42,7 @@ export const ITEMS = [
     manualHours: "fast",
     hours: "155:00",
     totalHours: "200:000",
+    status: 'orange',
   },
   {
     id: "208635872",
@@ -46,6 +51,7 @@ export const ITEMS = [
     manualHours: "fast",
     hours: "155:00",
     totalHours: "200:000",
+    status: 'green',
   },
   {
     id: "208635872",
@@ -54,6 +60,7 @@ export const ITEMS = [
     manualHours: "fast",
     hours: "155:00",
     totalHours: "200:000",
+    status: 'orange',
   },
   {
     id: "208635872",
@@ -62,6 +69,7 @@ export const ITEMS = [
     manualHours: "fast",
     hours: "155:00",
     totalHours: "200:000",
+    status: 'green',
   },
   {
     id: "208635872",
@@ -70,6 +78,7 @@ export const ITEMS = [
     manualHours: "fast",
     hours: "155:00",
     totalHours: "200:000",
+    status: 'orange',
   },
   {
     id: "208635872",
@@ -78,6 +87,7 @@ export const ITEMS = [
     manualHours: "fast",
     hours: "155:00",
     totalHours: "200:000",
+    status: 'orange',
   },
   {
     id: "208635872",
@@ -86,6 +96,7 @@ export const ITEMS = [
     manualHours: "fast",
     hours: "155:00",
     totalHours: "200:000",
+    status: 'orange',
   },
   {
     id: "208635872",
@@ -94,5 +105,6 @@ export const ITEMS = [
     manualHours: "fast",
     hours: "155:00",
     totalHours: "200:000",
+    status: 'orange',
   },
 ];
