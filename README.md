@@ -1,6 +1,6 @@
 # Ex.Co Candidate Home Test
 
-![image](https://user-images.githubusercontent.com/12518219/158185864-36f538d7-917e-4ceb-a8db-943d0a72c03f.png)
+![image](https://user-images.githubusercontent.com/12518219/158358870-63692f07-741a-4602-b865-171f27afad58.png)
 
 This repo contains a basic React app with a table component listing some mock work logs. 
 The data is given in the `data.js` file, do not modify it.
