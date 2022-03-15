@@ -15,10 +15,10 @@ Use the example provided to you to build the following React.js app:
 - Try to write clean code using good client architecture
 
 Once done with all of that, some extra things you can add:
-- Add pretty CSS like fonts, cursor and hover states
-- Make the table also look good in mobile view
+- Make it pretty with CSS like fonts, cursor, and hover states
+- Make the table look good in mobile view
 
-Notice that this example has some mistakes you will need to fix, including but not limited to: console warning, missing .gitignore, etc...
+Notice that this example has some mistakes you will need to fix, including but not limited to: console warning, missing `.gitignore`, etc...
 
 
 ### Useful links
