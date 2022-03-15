@@ -1,7 +1,7 @@
 {
-  "name": "table",
+  "name": "react-redux-test",
   "version": "1.0.0",
-  "description": "Snippet of table with draggable rows, using react-draggable lib",
+  "description": "Ex.Co candidate home test",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
