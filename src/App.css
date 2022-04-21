@@ -1,0 +1,17 @@
+.root {
+  position: absolute;
+  top: 20px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+.td-id {
+  width: 160px;
+  padding-right: 15px;
+}
+
+.td-worker-name {
+  width: 303px;
+  text-align: left;
+}
