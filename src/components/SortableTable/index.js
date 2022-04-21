@@ -3,8 +3,6 @@ import { arrayMoveImmutable } from 'array-move';
 import SortableColumns from './SortableColumns';
 import SortableRows from './SortableRows';
 import './style.css';
-// import { useDispatch } from 'react-redux';
-// import { sortColumns } from '../../redux/reducers/sortableTableReducer';
 
 export default function SortableTable({
   name,
@@ -13,16 +11,9 @@ export default function SortableTable({
   data,
 }) {
   const [columns, setColumns] = useState(columnsConfig);
-  //const dispatch = useDispatch();
 
   const onColSortEnd = ({ oldIndex, newIndex }) => {
     setColumns(() => arrayMoveImmutable(columns, oldIndex, newIndex));
-    // dispatch(
-    //   sortColumns({
-    //     name,
-    //     data: arrayMoveImmutable(columns, oldIndex, newIndex),
-    //   })
-    // );
   };
 
   return (
