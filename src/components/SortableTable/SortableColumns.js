@@ -1,6 +1,5 @@
 import React from 'react';
 import { SortableContainer, SortableElement } from 'react-sortable-hoc';
-import './style.css';
 
 const SortableItem = SortableElement(({ value, ...props }) => (
   <th {...props}>{value.header}</th>
@@ -24,7 +23,7 @@ const SortableList = SortableContainer(({ name, columns, actions }) => (
 export default function SortableColumns({
   name,
   columns,
-  actionsConfig,
+  actions,
   data,
   onColSortEnd,
 }) {
@@ -32,7 +31,7 @@ export default function SortableColumns({
     <SortableList
       name={name}
       columns={columns}
-      actions={actionsConfig}
+      actions={actions}
       onSortEnd={onColSortEnd}
       axis="x"
       lockAxis="x"
