@@ -2,6 +2,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 1080px;
+    margin: auto;
   }
   
   td {
@@ -31,7 +33,21 @@
   th {
     cursor: move;
   }
-  
+
+  th > span {
+    float: left;
+  }
+
   .th-action {
     cursor:default !important;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .td-action {
+      width: 25px;
+    }
+    
+    th > span {
+      display: none;
+    }
   }
