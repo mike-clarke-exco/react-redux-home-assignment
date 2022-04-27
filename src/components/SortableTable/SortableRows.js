@@ -7,7 +7,7 @@ const Item = ({ className, children }) => (
   <td className={className}>{children}</td>
 );
 
-const SortableItem = SortableElement(({ value, columns, actionsConfig }) => (
+const SortableItem = SortableElement(({ value, columns, actions }) => (
   <tr>
     {columns &&
       columns.map((col, index) => (
@@ -23,8 +23,8 @@ const SortableItem = SortableElement(({ value, columns, actionsConfig }) => (
           {value[col.name]}
         </Item>
       ))}
-    {actionsConfig &&
-      actionsConfig.map((action, index) => (
+    {actions &&
+      actions.map((action, index) => (
         <td key={index} className="td-action">
           <Tooltip
             content={action.tooltip}
@@ -49,7 +49,7 @@ const SortableList = SortableContainer(({ items, columns, actions }) => (
           index={index}
           value={value}
           columns={columns}
-          actionsConfig={actions}
+          actions={actions}
         />
       ))}
   </tbody>
