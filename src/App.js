@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { arrayMoveImmutable } from 'array-move';
 import SortableTable from './components/SortableTable';
 import { ITEMS } from './components/data';
@@ -35,7 +35,6 @@ const actionsConfig = [
 ];
 
 export default function App() {
-  const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
   const columns = useSelector((state) => state.sortableTable.columns);
   const rows = useSelector((state) => state.sortableTable.rows);
@@ -50,12 +49,9 @@ export default function App() {
 
   useEffect(() => {
     dispatch(getData({ columns: columnsConfig, rows: ITEMS }));
-    setLoading(false);
   }, [dispatch]);
 
-  return loading ? (
-    <div>Loading...</div>
-  ) : (
+  return (
     <div className="root">
       <SortableTable
         columns={columns}
