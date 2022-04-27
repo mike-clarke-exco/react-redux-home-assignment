@@ -3,12 +3,15 @@ import { createSlice } from '@reduxjs/toolkit';
 const sortableTableSlice = createSlice({
   name: 'sortableTable',
   initialState: {
-    columns: {},
-    rows: {},
+    columns: [],
+    rows: [],
   },
   reducers: {
+    getData: (state, action) => {
+      state.columns = action.payload.columns;
+      state.rows = action.payload.rows;
+    },
     sortColumns: (state, action) => {
-      console.log(action.payload);
       state.columns = action.payload;
     },
     sortRows: (state, action) => {
@@ -17,5 +20,5 @@ const sortableTableSlice = createSlice({
   },
 });
 
-export const { sortColumns } = sortableTableSlice.actions;
+export const { getData, sortColumns, sortRows } = sortableTableSlice.actions;
 export default sortableTableSlice.reducer;

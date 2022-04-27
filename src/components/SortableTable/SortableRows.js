@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { SortableContainer, SortableElement } from 'react-sortable-hoc';
-import { arrayMoveImmutable } from 'array-move';
 import { Icon } from '@iconify/react';
 import Tooltip from 'react-simple-tooltip';
 
@@ -10,19 +9,20 @@ const Item = ({ className, children }) => (
 
 const SortableItem = SortableElement(({ value, columns, actionsConfig }) => (
   <tr>
-    {columns.map((col, index) => (
-      <Item key={index} className={col.className}>
-        {col.statusIndicator && (
-          <span className="statusIndicator">
-            <Icon
-              icon="mdi:circle"
-              color={value.status ? value.status : 'transparent'}
-            />
-          </span>
-        )}
-        {value[col.name]}
-      </Item>
-    ))}
+    {columns &&
+      columns.map((col, index) => (
+        <Item key={index} className={col.cellClassName}>
+          {col.statusIndicator && (
+            <span className="statusIndicator">
+              <Icon
+                icon="mdi:circle"
+                color={value.status ? value.status : 'transparent'}
+              />
+            </span>
+          )}
+          {value[col.name]}
+        </Item>
+      ))}
     {actionsConfig &&
       actionsConfig.map((action, index) => (
         <td key={index} className="td-action">
@@ -42,31 +42,26 @@ const SortableItem = SortableElement(({ value, columns, actionsConfig }) => (
 
 const SortableList = SortableContainer(({ items, columns, actions }) => (
   <tbody>
-    {items.map((value, index) => (
-      <SortableItem
-        key={index}
-        index={index}
-        value={value}
-        columns={columns}
-        actionsConfig={actions}
-      />
-    ))}
+    {items &&
+      items.map((value, index) => (
+        <SortableItem
+          key={index}
+          index={index}
+          value={value}
+          columns={columns}
+          actionsConfig={actions}
+        />
+      ))}
   </tbody>
 ));
 
-export default function SortableRows({ name, columns, rows, actions }) {
-  const [data, setData] = useState(rows);
-
-  const onListSortEnd = ({ oldIndex, newIndex }) => {
-    setData(() => arrayMoveImmutable(data, oldIndex, newIndex));
-  };
-
+export default function SortableRows({ columns, rows, actions, onRowSortEnd }) {
   return (
     <SortableList
-      items={data}
+      items={rows}
       columns={columns}
       actions={actions}
-      onSortEnd={onListSortEnd}
+      onSortEnd={onRowSortEnd}
     />
   );
 }

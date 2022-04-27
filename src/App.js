@@ -1,14 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { arrayMoveImmutable } from 'array-move';
 import SortableTable from './components/SortableTable';
 import { ITEMS } from './components/data';
 import './App.css';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  getData,
+  sortColumns,
+  sortRows,
+} from './redux/reducers/sortableTableReducer';
 
 const columnsConfig = [
-  { name: 'id', header: 'Worker ID', className: 'td-id' },
+  {
+    name: 'id',
+    header: 'Worker ID',
+    headClassName: 'th-id',
+    cellClassName: 'td-id',
+  },
   {
     name: 'workerName',
     header: 'Worker Name',
-    className: 'td-worker-name',
+    cellClassName: 'td-worker-name',
     statusIndicator: true,
   },
   { name: 'extraHours', header: 'Overtime' },
@@ -23,13 +35,34 @@ const actionsConfig = [
 ];
 
 export default function App() {
-  return (
+  const [loading, setLoading] = useState(true);
+  const dispatch = useDispatch();
+  const columns = useSelector((state) => state.sortableTable.columns);
+  const rows = useSelector((state) => state.sortableTable.rows);
+
+  const handleColSortEnd = ({ oldIndex, newIndex }) => {
+    dispatch(sortColumns(arrayMoveImmutable(columns, oldIndex, newIndex)));
+  };
+
+  const handleRowSortEnd = ({ oldIndex, newIndex }) => {
+    dispatch(sortRows(arrayMoveImmutable(rows, oldIndex, newIndex)));
+  };
+
+  useEffect(() => {
+    dispatch(getData({ columns: columnsConfig, rows: ITEMS }));
+    setLoading(false);
+  }, [dispatch]);
+
+  return loading ? (
+    <div>Loading...</div>
+  ) : (
     <div className="root">
       <SortableTable
-        name="homeTest"
-        columnsConfig={columnsConfig}
-        actionsConfig={actionsConfig}
-        data={ITEMS}
+        columns={columns}
+        actions={actionsConfig}
+        data={rows}
+        onColSortEnd={handleColSortEnd}
+        onRowSortEnd={handleRowSortEnd}
       />
     </div>
   );
