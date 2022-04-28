@@ -18,19 +18,26 @@ const SortableItem = SortableElement(({ value }) => (
 const SortableList = SortableContainer(({ items }) => {
     return (
         <table>
-            <th>Worker ID</th>
-            <th>Worker Name</th>
-            <th>Overtime</th>
-            <th>Manual Hours</th>
-            <th>Hours</th>
-            <th>Total Hours</th>
-            {items.map((value, index) => (
-                <SortableItem
-                    key={`item-${value.workerName}`}
-                    index={index}
-                    value={value}
-                />
-            ))}
+            <thead>
+                <tr>
+                    <th>Worker ID</th>
+                    <th>Worker Name</th>
+                    <th>Overtime</th>
+                    <th>Manual Hours</th>
+                    <th>Hours</th>
+                    <th>Total Hours</th>
+                </tr>
+            </thead>
+            <tbody>
+                {items.map((value, index) => (
+                    <SortableItem
+                        key={`item-${value.workerName+index}`}
+                        index={index}
+                        value={value}
+                    />
+                ))}
+            </tbody>
+            
         </table>
     );
 });
