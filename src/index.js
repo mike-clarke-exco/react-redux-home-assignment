@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SortableComponent from './components/App';
+import App from './components/App';
 import './index.css';
 
 ReactDOM.render(
-    <SortableComponent />,
+    <App />,
     document.getElementById("root")
 );
