@@ -2,10 +2,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 1080px;
-    margin: auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
   }
-  
+
   td {
     background: #f6f6f6;
     font-style: normal;
@@ -49,5 +50,9 @@
     
     th > span {
       display: none;
+    }
+
+    .table-container {
+      padding: 8px;
     }
   }
