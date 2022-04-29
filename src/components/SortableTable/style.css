@@ -1,0 +1,58 @@
+.table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+  }
+
+  td {
+    background: #f6f6f6;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-transform: capitalize;
+    margin: 1px;
+    width: 224px;
+    height: 43px;
+    cursor: move;
+  }
+
+  .statusIndicator {
+    margin-right: 8px;
+  }
+
+  .td-action {
+    width: 50px;
+    cursor: pointer;
+  }
+  
+  th {
+    cursor: move;
+  }
+
+  th > span {
+    float: left;
+  }
+
+  .th-action {
+    cursor:default !important;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .td-action {
+      width: 25px;
+    }
+    
+    th > span {
+      display: none;
+    }
+
+    .table-container {
+      padding: 8px;
+    }
+  }

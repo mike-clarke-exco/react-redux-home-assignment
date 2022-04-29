@@ -1,0 +1,35 @@
+.root {
+  position: absolute;
+  top: 20px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  max-width: 1080px;
+  margin: auto;
+  padding: 10px;
+}
+
+.td-id {
+  width: 160px;
+  padding-right: 15px;
+}
+
+.td-worker-name {
+  width: 303px;
+  text-align: left;
+  padding: 0px 5px 0px 8px;
+}
+
+@media only screen and (max-width: 768px) {
+  .th-id {
+    display: none;
+  }
+  .td-id {
+    display: none;
+  }
+
+  .root {
+    top: 10px;
+    padding: 10px;
+  }
+}
